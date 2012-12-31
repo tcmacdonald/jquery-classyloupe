@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jQuery ClassyLoupe plugin | Class.PM</title>
+        <link rel="stylesheet" media="screen" href="css/documentation.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="js/jquery.mousewheel.js"></script>
+        <script src="js/jquery.easing.1.2.js"></script>
+        <script src="js/jquery.classyloupe.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jquery.classyloupe.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <div class="container_6 clearfix">
+                    <h1 class="grid_6">jQuery ClassyLoupe</h1>
+                </div>
+            </header>
+            <section>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Overview</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <p><a href="http://www.class.pm/projects/jquery/classyloupe">ClassyLoupe</a> is a <a href="http://www.jquery.com">jQuery</a> plugin written by <a href="http://www.class.pm">Marius Stanciu - Sergiu</a>, a plugin that gives you the ability to add zoom on hover ability for your photos with single line of code.</p>
+                                    <p>With ClassyLoupe you have the ability to control the zoom level and loupe size via mouse scroll which gives you the opportunity to enlarge areas that you might be interested in.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Instructions</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+<p>First you need to include the jQuery library, since ClassyLoupe is a plugin. You can download it from the <a href="http://www.jquery.com">jQuery website</a> or link it directly from the Google CDN.</p>
+<pre>
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"&gt;&lt;/script&gt;
+</pre>
+<p>Secondly, you need to include the jQuery ClassyLoupe javascript and the css file into your page. You can do it by adding the code below to your page.</p>
+<pre>
+&lt;script src="js/jquery.classyloupe.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/jquery.classyloupe.css" /&gt;
+</pre>
+<p>Next, you implement the actual image(s) that will be magnified/zoomed by the Loupe. The structure is as simple as it can get.</p>
+<pre>
+&lt;a href="#"&gt;
+    &lt;img alt="Your image caption" src="your-image.jpg" class="louped" /&gt;
+&lt;/a&gt;
+</pre>
+<p>As the last step, you trigger the <em>ClassyLoupe()</em> function on the element you just created. In this case, we trigger the function on the image with the class <em>louped</em>.</p>
+<pre>
+$('.louped').ClassyLoupe({
+    'max_size': 600,
+    'loupe_toggle_time': 'fast'
+});<br />
+</pre>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Options</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <p><em><strong>shape</strong></em> - the shape of the loupe. Options can be: circle/rounded/square</p>
+                                    <p><em><strong>glossy</strong></em> - if the loupe is glossy or not. Options: true/false</p>
+                                    <p><em><strong>drop_shadow</strong></em> - if the loupe will have a drop-shadow effect. Options: true/false</p>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div class="container_6 clearfix">
+                    <section class="main-section grid_6">
+                        <div class="main-content">
+                            <header>
+                                <h2>Demo</h2>
+                            </header>
+                            <section class="clearfix">
+                                <div>
+                                    <div class="container">
+                                        <a href="#"><img alt="" src='images/image1.jpg' id="loupe1" /></a> 
+                                        <p><em>Classic rounded shape of loupe, dark semi-transparent overlay and 100% zoom for best visual effect. Use mouse scroll to change size of loupe or hold 'z' on keyboard and scroll to change the zoom.</em></p>
+                                    </div>
+                                    <div class="container">
+                                        <a href="images/image2.jpg" id="loupe2"><img alt="" src="images/image2.jpg" /></a> 
+                                        <p><em>This example shows loupe with some custom settings. Almost every aspect of look and feel can be changed. Here custom image overlay is applied, shape, size, snap, min/max size are changed also. You can easily allow/forbid size/zoom changing to end user. Zoom in is disabled, but use mouse scroll to change size of loupe.</em></p>
+                                    </div>
+                                    <div class="container">
+                                        <a href="images/image3-big.jpg" id="loupe3"><img alt="" src="images/image3.jpg" /></a> 
+                                        <p><em>Here we can see squared shape in action. Shadow and lens glossy effect can easily be removed using plugin settings. Use mouse scroll to change size of loupe or hold 'z' on keyboard and scroll to change the zoom.</em></p>
+                                    </div>
+                                    <div class="container">
+                                        <a href="images/image4-big.jpg" id="loupe4"><img alt="" src="images/image4.jpg" /></a> 
+                                        <p><em>Once again classic rounded loupe but this time without image overlay and optional shadow. Use mouse scroll to change size of loupe or hold 'z' on keyboard and scroll to change the zoom.</em></p>
+                                    </div>
+                                    <div class="container">
+                                        <a href="images/image5.jpg" id="loupe5"><img alt="" src="images/image5-grey.jpg" /></a>
+                                        <p><em>This time we specify other image which has to be rendered inside loupe. Basically it's the same image as source but with one difference - it's not a greyscale image. Using different images as thumb and target is very easy to setup and can create stunning effects. No resize & zoom allowed - scroll event ignore and handled by browser - scrolls page.</em></p>
+                                    </div>
+                                    <div class="container">
+                                        <a href="images/image6.jpg" id="loupe6"><img alt="" src="images/image6-blur.jpg" /></a>	 	
+                                        <p><em>The same story here - two images one normal and second altered for a nice effect. Use mouse scroll to change size of loupe or hold 'z' on keyboard and scroll to change zoom factor.</em></p>
+                                    </div>
+                                    <script>
+                                        $(document).ready(function()
+                                        {
+                                            $('#loupe1').ClassyLoupe({
+                                                'max_size' : 600,
+                                                'default_size' : 160,
+                                                'loupe_toggle_time' : 'fast'
+                                            });
+                                            $('#loupe2').ClassyLoupe({
+                                                'overlay_class_name': 'overlay_img',
+                                                'shape' : 'rounded',
+                                                'default_size' : 160,
+                                                'min_size' : 200,															
+                                                'max_size' : 400,
+                                                'size_snap' : 25,
+                                                'allow_zoom' : false
+                                            });
+                                            $('#loupe3').ClassyLoupe({
+                                                'default_zoom': 100,
+                                                'shape' : 'square',
+                                                'default_size' : 160,
+                                                'glossy' : false,
+                                                'drop_shadow' : false 
+                                            });
+                                            $('#loupe4').ClassyLoupe({
+                                                'default_zoom': 100,
+                                                'default_size' : 160,
+                                                'apply_overlay' : false,
+                                                'drop_shadow' : false 
+                                            });
+                                            $('#loupe5').ClassyLoupe({
+                                                'default_size' : 160,
+                                                'apply_overlay' : false,
+                                                'shape' : 'rounded',
+                                                'allow_zoom' : false,
+                                                'allow_resize' : false
+                                            });
+                                            $('#loupe6').ClassyLoupe();
+                                        });
+                                    </script>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+        <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-30825160-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </body>
+</html>
