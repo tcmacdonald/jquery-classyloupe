@@ -3,11 +3,12 @@
  * http://www.class.pm/projects/jquery/classyloupe
  *
  * Copyright 2011 - 2013, Class.PM www.class.pm
- * Written by Marius Stanciu - Sergiu <marius@picozu.net>
+ * Written by Marius Stanciu - Sergiu <marius@picozu.com>
  * Licensed under the GPL Version 3 license.
- * Version 1.1.0
+ * Version 1.1.1
  *
  */
+
 (function ($) {
     id = 0;
     jQuery.fn.ClassyLoupe = function (a) {
@@ -45,22 +46,8 @@
             overlay_class_name: ""
         }, a || {}),
         j = jQuery(this),
-        c = "classyloupe-" + id,
-        t = "classyloupe_overlay-" + id,
-        h = a.default_size,
-        i, q = null,
-        u = 0,
-        v = 0,
-        x = 0,
-        y = 0,
-        r = 0,
-        s = 0,
-        w = !1,
-        p = !1,
-        k = a.default_zoom,
-        n = 0,
-        o = 0,
-        e, z = !1;
+        c = "classyloupe-" + id, t = "classyloupe_overlay-" + id,
+        h = a.default_size, i, q = null, u = 0, v = 0, x = 0, y = 0, r = 0, s = 0, w = !1, p = !1, k = a.default_zoom, n = 0, o = 0, e, z = !1;
         return this.each(function () {
             function A() {
                 var d = h - 2 * $("#" + c + " .glossy").css("marginTop"),
@@ -107,11 +94,12 @@
                                     pageX: m + i / 2,
                                     pageY: l + i / 2
                                 });
-                                j.trigger(a)
+                                j.trigger(a);
                             }
                         })
                     }
-                } else if (a.allow_resize && !w && (g = d * a.size_snap, !(h + g > a.max_size || h + g < a.min_size))) {
+                }
+                else if (a.allow_resize && !w && (g = d * a.size_snap, !(h + g > a.max_size || h + g < a.min_size))) {
                     h += g;
                     var f = 0,
                     m = Math.round($("#" + c).offset().left - g),
@@ -147,7 +135,7 @@
                                 pageX: m + i / 2,
                                 pageY: l + i / 2
                             });
-                            j.trigger(a)
+                            j.trigger(a);
                         }
                     })) : a.shape == "rounded" ? $("#" + c).animate({
                         width: h + "px",
@@ -186,14 +174,14 @@
                                 pageX: m + i / 2,
                                 pageY: l + i / 2
                             });
-                            j.trigger(a)
+                            j.trigger(a);
                         }
                     });
-                    a.glossy && A()
+                    a.glossy && A();
                 }
             }
             jQuery.browser.webkit && document.readyState != "complete" ? setTimeout(arguments.callee, 100) : (function () {
-                j.is("a") ? (q = j.attr("href"), e = j.find("img")) : j.is("img") && (q = j.attr("src"), e = j);
+                j.is("a") ? (q = j.attr("href"), e = j.find("img")) : (j.is("img") || j.is("input[type='image']")) && (q = j.attr("src"), e = j);
                 jQuery.browser.msie && parseInt(jQuery.browser.version, 10) < 9 && (z = !0, k = 100);
                 u = e.width();
                 v = e.height();
@@ -228,7 +216,7 @@
                         width: e.outerWidth() + "px",
                         height: e.outerHeight() + "px"
                     }));
-                    a.drop_shadow && $("#" + c).addClass("shadow")
+                    a.drop_shadow && $("#" + c).addClass("shadow");
                 };
                 d.src = q
             }(), (a.allow_resize || a.allow_zoom) && !z && $.event.special.mousewheel && $("#" + c).bind("mousewheel", function (a, b) {
@@ -236,9 +224,9 @@
                 return !1
             }), e.bind(a.trigger, function (d) {
                 p ? ($("#" + c).fadeOut(a.loupe_toggle_time, a.loupe_toggle_easing), p = !1, a.apply_overlay && $("#" + t).fadeOut(a.overlay_effect_time, a.overlay_effect_easing)) : ($("#" + c).fadeIn(a.loupe_toggle_time, a.loupe_toggle_easing), p = !0, a.apply_overlay && $("#" + t).fadeTo(a.overlay_effect_time, a.overlay_opacity, a.overlay_effect_easing), A());
-                if (d.type == "click") return d.preventDefault ? d.preventDefault() : d.returnValue = !1, !1
+                if (d.type == "click") return d.preventDefault ? d.preventDefault() : d.returnValue = !1, !1;
             }), $("#" + c).bind("click", function () {
-                e.trigger("click")
+                e.trigger("click");
             }), $(document).bind("mousemove", function (d) {
                 if (!p) return !0;
                 var j = parseInt(e.css("border-left-width")) + parseInt(e.css("padding-left")),
@@ -260,9 +248,9 @@
                 });
                 if (l < -j || k < -g || l > u + f || k > v + m) $("#" + c).fadeOut(a.loupe_toggle_time), p = !1, a.apply_overlay && $("#" + t).fadeOut(a.overlay_effect_time)
             }), $(document).keyup(function (b) {
-                if (b.which == a.zoom_key && p) return w = !1, b.preventDefault ? b.preventDefault() : b.returnValue = !1, !1
+                if (b.which == a.zoom_key && p) return w = !1, b.preventDefault ? b.preventDefault() : b.returnValue = !1, !1;
             }).keydown(function (b) {
-                if (b.which == a.zoom_key && p) return w = !0, b.preventDefault ? b.preventDefault() : b.returnValue = !1, !1
+                if (b.which == a.zoom_key && p) return w = !0, b.preventDefault ? b.preventDefault() : b.returnValue = !1, !1;
             }))
         })
     }
