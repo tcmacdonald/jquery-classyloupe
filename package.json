@@ -1,0 +1,27 @@
+{
+	"name": "classyloupe",
+	"title": "jQuery ClassyLoupe",
+	"description": "The jQuery ClassyLoupe is a jQuery plugin that gives you the ability to add zoom on hover ability for your photos with single line of code.",
+	"keywords": [
+		"wiggle",
+		"effects"
+	],
+	"version": "1.1.1",
+	"author": {
+		"name": "Marius Stanciu - Sergiu",
+		"url": "http://www.class.pm"
+	},
+	"licenses": [
+		{
+			"type": "GPLv3",
+			"url": "http://www.gnu.org/licenses/gpl-3.0.txt"
+		}
+	],
+	"bugs": "https://github.com/classpm/jquery-classyloupe/issues",
+	"homepage": "http://www.class.pm/projects/jquery/classyloupe/",
+	"docs": "http://www.class.pm/projects/jquery/classyloupe/",
+	"download": "https://github.com/classpm/jquery-classyloupe/archive/master.zip",
+	"dependencies": {
+		"jquery": ">=1.6"
+	}
+}
