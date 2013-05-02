@@ -2,7 +2,6 @@
  * jQuery ClassyLoupe
  * http://www.class.pm/projects/jquery/classyloupe
  *
- * Copyright 2011 - 2013, Class.PM www.class.pm
  * Written by Marius Stanciu - Sergiu <marius@picozu.com>
  * Licensed under the GPL Version 3 license.
  * Version 1.1.1
